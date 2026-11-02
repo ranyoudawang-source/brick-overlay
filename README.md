@@ -10,9 +10,9 @@ A translucent colored-brick reading overlay for macOS and Windows.
 
 ![半透明彩色砖块叠加在网页文字上方 / Translucent colored bricks over webpage text](docs/images/brick-overlay-live.png)
 
-用户提供的旧版实机截图；1.3 保留这组 Mac“绿色”，Windows 也采用相同色系。页面中的旧下载信息以本说明为准。
+用户提供的“绿色”配色实机演示。1.3 保留这组 Mac 配色，Windows 也采用相同色系。截图中的页面显示旧版信息，当前下载与功能以本说明为准。
 
-A user-provided screenshot of an earlier version. Version 1.3 preserves this Mac green palette and brings it to Windows. Use the current download information below.
+A user-provided demonstration of the green palette in use. Version 1.3 preserves these Mac colors and brings them to Windows. The page inside the screenshot shows an earlier version; see below for current downloads and features.
 
 ## 中文说明
 
