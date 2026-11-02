@@ -15,4 +15,4 @@ Brick Overlay for Windows 1.2.1
 
 任务栏通知区域始终保留“显示/隐藏”和“退出”。设置保存在 %APPDATA%\BrickOverlay\settings.xml；更新包不会删除该设置文件。
 
-验证范围：在 macOS 上使用微软 C# 编译器与 .NET Framework 4.8 参考程序集交叉编译成功。Windows 界面运行尚未实测；若遇到问题，请提供完整报错或截图。
+验证范围：在 macOS 上使用微软 C# 编译器与 .NET Framework 4.8 参考程序集交叉编译成功。2026-11-02，经用户在 Windows 实机运行确认可用。此确认针对该用户的测试环境；若其他设备遇到问题，请提供系统版本、完整报错或截图。

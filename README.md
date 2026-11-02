@@ -5,7 +5,7 @@
 ## 下载
 
 - **[macOS 1.2（Apple Silicon）](releases/BrickOverlay-macOS.zip)**：已由项目作者在 Mac 上确认可用。
-- **[Windows 1.2.1（实验版）](releases/BrickOverlay-Windows.zip)**：提供已编译的 `.exe`、源码和备用启动脚本；已通过编译检查，尚未完成 Windows 界面实测。
+- **[Windows 1.2.1](releases/BrickOverlay-Windows.zip)**：提供已编译的 `.exe`、源码和备用启动脚本；已通过编译检查，并于 2026-11-02 经用户在 Windows 实机运行确认可用。
 
 ## 功能
 
@@ -24,7 +24,7 @@
 
 ## Windows 使用
 
-面向装有 .NET Framework 4.8 的 Windows 10/11，当前为待测试的实验版。
+面向装有 .NET Framework 4.8 的 Windows 10/11。Windows 1.2.1 已经用户实机运行确认可用。
 
 1. 将整个压缩包解压到可写的文件夹。
 2. 直接双击 `BrickOverlay.exe`。
@@ -51,4 +51,4 @@ releases/
 
 ## 状态与反馈
 
-这是一个持续改进的小工具。macOS 版由作者实测；Windows 1.2.1 已使用微软 C# 编译器及 .NET Framework 4.8 参考程序集完成编译检查，并复现了修复前的 System.Xml 依赖错误。编译通过不代表已完成 Windows 界面运行测试。欢迎通过 Issues 提交系统版本、复现步骤和报错内容。
+这是一个持续改进的小工具。macOS 版由作者实测；Windows 1.2.1 已使用微软 C# 编译器及 .NET Framework 4.8 参考程序集完成编译检查，并于 2026-11-02 经用户在 Windows 实机运行确认可用。此确认针对该用户的测试环境，不代表所有 Windows 版本和设备的兼容性覆盖。欢迎通过 Issues 提交系统版本、复现步骤和报错内容。
