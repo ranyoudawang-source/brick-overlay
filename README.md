@@ -5,7 +5,7 @@
 ## 下载
 
 - **[macOS 1.2（Apple Silicon）](releases/BrickOverlay-macOS.zip)**：已由项目作者在 Mac 上确认可用。
-- **[Windows 版（实验版）](releases/BrickOverlay-Windows.zip)**：提供源码与首次启动编译脚本，尚未在 Windows 上实机验证。
+- **[Windows 1.2.1（实验版）](releases/BrickOverlay-Windows.zip)**：提供已编译的 `.exe`、源码和备用启动脚本；已通过编译检查，尚未完成 Windows 界面实测。
 
 ## 功能
 
@@ -24,11 +24,13 @@
 
 ## Windows 使用
 
-面向 Windows 10/11，当前为待测试的实验版。
+面向装有 .NET Framework 4.8 的 Windows 10/11，当前为待测试的实验版。
 
 1. 将整个压缩包解压到可写的文件夹。
-2. 双击 `Start Brick Overlay.cmd`。
-3. 第一次启动时，脚本通过 Windows PowerShell 编译同目录的 `BrickOverlay.cs`，生成并启动 `BrickOverlay.exe`。
+2. 直接双击 `BrickOverlay.exe`。
+3. 备用入口是 `Start Brick Overlay.cmd`。程序不存在或源码、启动脚本更新时，它会通过 Windows PowerShell 重新编译。
+
+1.2.1 修复了 `System.Xml / IXmlLineInfo` 缺失引用导致的启动编译错误，并修正 Windows PowerShell 下的中文文本编码。
 
 请保留配套的源码和启动脚本。遇到问题时，可从任务栏通知区域退出；设置存储在 `%APPDATA%\BrickOverlay\settings.xml`。
 
@@ -49,4 +51,4 @@ releases/
 
 ## 状态与反馈
 
-这是一个持续改进的小工具。macOS 版由作者实测；Windows 版目前只完成源码与打包检查，不代表已通过运行测试。欢迎通过 Issues 提交系统版本、复现步骤和报错内容。
+这是一个持续改进的小工具。macOS 版由作者实测；Windows 1.2.1 已使用微软 C# 编译器及 .NET Framework 4.8 参考程序集完成编译检查，并复现了修复前的 System.Xml 依赖错误。编译通过不代表已完成 Windows 界面运行测试。欢迎通过 Issues 提交系统版本、复现步骤和报错内容。
