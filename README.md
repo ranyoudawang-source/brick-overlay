@@ -2,6 +2,12 @@
 
 浮在文字上方的半透明彩色砖块阅读辅助工具，支持 macOS 和 Windows。
 
+## 实机画面
+
+![Brick Overlay 实机效果：半透明彩色砖块覆盖在网页文字上方](docs/images/brick-overlay-live.png)
+
+用户提供的实机截图，展示透卡叠加在网页文字上方的效果。截图中的页面内容为拍摄时的版本，下载及运行状态以本页说明为准。
+
 ## 下载
 
 - **[macOS 1.2（Apple Silicon）](releases/BrickOverlay-macOS.zip)**：已由项目作者在 Mac 上确认可用。
