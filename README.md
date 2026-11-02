@@ -10,104 +10,94 @@ A translucent colored-brick reading overlay for macOS and Windows.
 
 ![半透明彩色砖块叠加在网页文字上方 / Translucent colored bricks over webpage text](docs/images/brick-overlay-live.png)
 
-用户提供的实机截图。截图中的页面内容为拍摄时的版本，下载及运行状态以本页说明为准。
+用户提供的旧版实机截图；1.3 保留这组 Mac“绿色”，Windows 也采用相同色系。页面中的旧下载信息以本说明为准。
 
-A user-provided screenshot of the app in use. The page shown reflects an earlier version; see the information below for current downloads and testing status.
+A user-provided screenshot of an earlier version. Version 1.3 preserves this Mac green palette and brings it to Windows. Use the current download information below.
 
 ## 中文说明
 
 ### 下载
 
-- **[macOS 1.2（Apple Silicon）](releases/BrickOverlay-macOS.zip)**：已由项目作者在 Mac 上确认可用。
-- **[Windows 1.2.1](releases/BrickOverlay-Windows.zip)**：包含已编译的 `.exe`、源码和备用启动脚本；已通过编译检查，并于 2026-11-02 经用户在 Windows 实机运行确认可用。
+**[1.3.0 正式版发布页](https://github.com/ranyoudawang-source/brick-overlay/releases/tag/v1.3.0)**
+
+- [macOS 1.3.0（Apple Silicon）](https://github.com/ranyoudawang-source/brick-overlay/releases/download/v1.3.0/BrickOverlay-macOS.zip)
+- [Windows 1.3.0](https://github.com/ranyoudawang-source/brick-overlay/releases/download/v1.3.0/BrickOverlay-Windows.zip)
 
 ### 功能
 
-- 彩色透卡默认鼠标穿透，可以继续操作下方的文字和窗口。
-- 透卡右侧小按钮打开控制菜单。
-- **Appearance** 调整配色、宽度、高度和透明度；高度范围为 48–1000。
-- 解锁后可拖动，锁定后恢复鼠标穿透。
-- 五组内置配色，支持命名保存个人预设和保存默认外观。
-- 菜单栏或通知区域保留显示、隐藏和退出入口。
+- 透卡默认鼠标穿透；右侧 `⋯` 按钮打开菜单，解锁后可拖动。菜单栏或通知区域保留退出入口。
+- **Appearance** 支持滑块和数值输入：透卡宽 100–6000、高 48–4000；砖块宽 24–1200、高 8–1000。
+- **砖块**：固定宽高、交错排列。
+- **随机砖块**：指定最小、最大高度；勾选“同时随机宽度”后，每行随机高度、行内每块随机宽度。边缘砖块裁切，重绘和改色不打乱布局，可点击“重新随机”。
+- **文献阅读**：2–16 个整宽大色块，适合英文长段落；按区域划分，不自动识别正文段落。
+- **自选色板**：1–12 色，系统选色器、`#RRGGBB` 输入、添加和删除；五组内置配色。“绿色”恢复旧版 Mac 色系，Windows 使用其浅色外观下的色值。
+- 保存启动默认外观和命名个人预设，包含尺寸、模式、随机范围、布局和颜色。
 
-### macOS 使用
+尺寸以屏幕坐标单位计：macOS 为逻辑点，Windows 受显示缩放影响，不一定等于物理像素。允许透卡超出屏幕；菜单按钮尽量保持可见。
 
-解压后打开 `BrickOverlay.app`。现有预编译包面向 Apple Silicon，编译目标为 macOS 26；更早的 macOS 尚未验证。应用未做开发者签名或公证。
+### 使用与升级
 
-日常操作使用透卡右侧的 `⋯` 按钮。菜单栏的 **透** 可以显示、隐藏和退出应用。
+先退出旧版或试用版，避免多张透卡叠加。
 
-### Windows 使用
+**macOS**：解压并打开 `BrickOverlay.app`。预编译包要求 Apple Silicon + macOS 26。应用使用本地临时签名，未做开发者签名或公证。右侧菜单及菜单栏“透”均可退出。
 
-面向装有 .NET Framework 4.8 的 Windows 10/11。Windows 1.2.1 已经用户实机运行确认可用。
+**Windows**：面向 Windows 10/11 + .NET Framework 4.8。将整个压缩包解压到可写文件夹，双击 `BrickOverlay.exe`。备用入口为 `Start Brick Overlay.cmd`；可用 Windows PowerShell 从配套源码重新编译。请保留源码和启动脚本。
 
-1. 将整个压缩包解压到可写的文件夹。
-2. 直接双击 `BrickOverlay.exe`。
-3. 备用入口是 `Start Brick Overlay.cmd`。程序不存在或源码、启动脚本更新时，它会通过 Windows PowerShell 重新编译。
+首次启动 1.3 时，优先导入本机试用版设置；没有试用版设置则读取旧正式版。后续使用正式版独立保存的数据。Mac 使用 `local.codex.brickoverlay` 偏好域中的 `state`，Windows 使用 `%APPDATA%\BrickOverlay\settings-v1.3.xml`，原 `settings.xml` 保留。
 
-1.2.1 修复了 `System.Xml / IXmlLineInfo` 缺失引用导致的启动编译错误，并修正 Windows PowerShell 下的中文文本编码。
+已有自选颜色不会自动覆盖。要使用恢复后的绿色，请在 **Appearance → 载入配色 → 绿色** 重新载入，满意后保存为默认或个人预设。
 
-请保留配套的源码和启动脚本。遇到问题时，可从任务栏通知区域退出；设置存储在 `%APPDATA%\BrickOverlay\settings.xml`。
+### 验证与反馈
 
-### 状态与反馈
+用户已确认 1.3 的尺寸输入、随机布局、自选颜色和文献模式试用版在 Mac 与 Windows 可用，并确认 Mac 恢复后的绿色可用。正式包已完成两平台编译、布局与预设保存测试、Mac 签名和压缩包检查。Windows 最后的绿色色值调整与正式版设置迁移尚未单独在 Windows 桌面复测。
 
-macOS 版由作者实测；Windows 1.2.1 已使用微软 C# 编译器及 .NET Framework 4.8 参考程序集完成编译检查，并于 2026-11-02 经用户在 Windows 实机运行确认可用。此确认针对该用户的测试环境，不代表所有 Windows 版本和设备的兼容性覆盖。
-
-欢迎通过 [Issues](https://github.com/ranyoudawang-source/brick-overlay/issues) 提交系统版本、复现步骤和报错内容。当前应用菜单主要使用中文，**Appearance** 使用英文。
+通过 [Issues](https://github.com/ranyoudawang-source/brick-overlay/issues) 提交系统版本、复现步骤和报错信息。Appearance 主要使用中英双语；部分菜单和预设名称仍为中文。
 
 ## English
 
 ### Downloads
 
-- **[macOS 1.2 (Apple Silicon)](releases/BrickOverlay-macOS.zip)**: confirmed working on the project author's Mac.
-- **[Windows 1.2.1](releases/BrickOverlay-Windows.zip)**: includes a compiled `.exe`, source code, and a fallback launcher. Compilation has been checked, and a user confirmed it working on a Windows machine on November 2, 2026.
+**[Version 1.3.0 release](https://github.com/ranyoudawang-source/brick-overlay/releases/tag/v1.3.0)**
+
+- [macOS 1.3.0 (Apple Silicon)](https://github.com/ranyoudawang-source/brick-overlay/releases/download/v1.3.0/BrickOverlay-macOS.zip)
+- [Windows 1.3.0](https://github.com/ranyoudawang-source/brick-overlay/releases/download/v1.3.0/BrickOverlay-Windows.zip)
 
 ### Features
 
-- The colored overlay is click-through by default, so you can interact with the text and windows underneath.
-- A small button to the right of the overlay opens the control menu.
-- **Appearance** adjusts the palette, width, height, and opacity. Height can be set from 48 to 1000.
-- Unlock the overlay to drag it; locking it restores click-through behavior.
-- Five built-in palettes, named personal presets, and a saved default appearance.
-- The menu bar or notification-area icon always provides show, hide, and quit controls.
+- Click-through overlay, a menu button on its right, and an unlock option for dragging. Menu-bar or notification-area controls include Quit.
+- **Appearance** offers sliders and numeric input: overlay width 100–6000 and height 48–4000; brick width 24–1200 and height 8–1000.
+- **Bricks**: uniform sizes in staggered rows.
+- **Random bricks**: configurable height range. Enable **Randomize widths** for random row heights and individual brick widths. Edge bricks are clipped. Repainting or changing colors keeps the layout stable; Shuffle generates another layout.
+- **Document**: 2–16 full-width reading bands for longer passages. This divides the area geometrically, without paragraph detection.
+- **Custom palette**: 1–12 editable colors, native color picker, hex input, add/remove controls and five presets. The green preset restores the original Mac colors; Windows uses their light-appearance sRGB values.
+- Startup defaults and named presets save dimensions, mode, random ranges, layout and colors.
 
-### Using the macOS app
+Dimensions use screen coordinates: logical points on macOS and display-scaled units on Windows, which may differ from physical pixels. Oversized overlays are allowed, with the menu button kept visible where possible.
 
-Extract the archive and open `BrickOverlay.app`. The prebuilt app targets Apple Silicon and macOS 26; earlier macOS versions have not been tested. The app is not developer-signed or notarized.
+### Use and upgrade
 
-Use the `⋯` button to the right of the overlay for everyday controls. The **透** menu-bar item lets you show or hide the overlay and quit the app.
+Quit the previous stable or preview app before launching this version.
 
-### Using the Windows app
+**macOS**: extract and open `BrickOverlay.app`. The prebuilt app requires Apple Silicon and macOS 26. It is ad-hoc signed, not Developer ID signed or notarized. Use the right-side menu or the **透** menu-bar item to quit.
 
-Intended for Windows 10/11 with .NET Framework 4.8 installed. A user has confirmed Windows 1.2.1 working on their machine.
+**Windows**: intended for Windows 10/11 with .NET Framework 4.8. Extract the entire archive into a writable folder, then open `BrickOverlay.exe`. The fallback `Start Brick Overlay.cmd` can rebuild from the included source using Windows PowerShell. Keep the source and launcher files together.
 
-1. Extract the entire archive into a writable folder.
-2. Double-click `BrickOverlay.exe`.
-3. Alternatively, use `Start Brick Overlay.cmd`. It recompiles the app through Windows PowerShell if the executable is missing or the source or launcher has been updated.
+On first launch, 1.3 imports preview settings when available, otherwise the previous stable settings. Subsequent runs use the saved 1.3 state. macOS stores `state` in the `local.codex.brickoverlay` preferences domain. Windows uses `%APPDATA%\BrickOverlay\settings-v1.3.xml`, preserving the old `settings.xml`.
 
-Version 1.2.1 fixes a missing `System.Xml / IXmlLineInfo` assembly reference that prevented startup compilation, and fixes Chinese text encoding in Windows PowerShell.
-
-Keep the source and launcher files together. You can quit through the notification-area icon. Settings are stored in `%APPDATA%\BrickOverlay\settings.xml`.
+Existing custom colors are preserved. To load the restored green palette, choose **Appearance → Load palette → 绿色**, then save it as your default or a named preset if desired.
 
 ### Testing and feedback
 
-The macOS app has been tested by the author. Windows 1.2.1 passed compilation checks using Microsoft's C# compiler and .NET Framework 4.8 reference assemblies, and a user confirmed it working on a Windows machine on November 2, 2026. This confirmation covers that user's test environment, rather than every Windows version and device.
+The user confirmed the 1.3 preview features working on both Mac and Windows, and the restored Mac green palette working on Mac. Release checks include compilation for both platforms, layout and preset persistence tests, Mac signature verification and archive integrity. The final Windows palette values and stable settings migration have not yet received a separate Windows desktop retest.
 
-Please include your operating system version, steps to reproduce, and any error messages when submitting an [issue](https://github.com/ranyoudawang-source/brick-overlay/issues). App menus currently use mostly Chinese labels, with **Appearance** in English.
+Please report your operating system version, reproduction steps and error details in [Issues](https://github.com/ranyoudawang-source/brick-overlay/issues). Appearance uses mostly bilingual labels; some menus and palette names remain Chinese.
 
 ## 项目文件 · Project files
 
-```text
-macOS/
-  Overlay.swift                  AppKit 源码 / AppKit source
-  Info.plist                     应用包元数据 / App bundle metadata
-Windows/
-  BrickOverlay.cs                WinForms 源码 / WinForms source
-  Start.ps1                      编译与启动脚本 / Build and launch script
-  Start Brick Overlay.cmd        双击启动入口 / Double-click launcher
-  README.txt                     Windows 使用说明 / Windows instructions
-releases/
-  BrickOverlay-macOS.zip
-  BrickOverlay-Windows.zip
-docs/images/
-  brick-overlay-live.png         实机截图 / Screenshot
-```
+- `macOS/Appearance.swift` — 布局与数据 / Layout and data model
+- `macOS/Overlay.swift` — AppKit 界面 / AppKit interface
+- `macOS/Info.plist`, `macOS/build.sh` — 元数据与编译 / Metadata and build script
+- `Windows/BrickOverlay.cs` — WinForms 源码 / WinForms source
+- `Windows/Start.ps1`, `Windows/Start Brick Overlay.cmd` — 备用编译启动 / Fallback build and launch
+- `releases/` — 两平台安装包 / Both platform archives
+- `docs/images/brick-overlay-live.png` — 实机截图 / Screenshot
