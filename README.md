@@ -8,11 +8,11 @@ A translucent colored-brick reading overlay for macOS and Windows.
 
 ## 实机画面 · In use
 
-![半透明彩色砖块叠加在网页文字上方 / Translucent colored bricks over webpage text](docs/images/brick-overlay-live.png)
+![随机宽度绿色透卡与 Appearance 设置实机画面 / Green random-width overlay and Appearance controls in use](docs/images/brick-overlay-live.png)
 
-用户提供的“绿色”配色实机演示。1.3 保留这组 Mac 配色，Windows 也采用相同色系。截图中的页面显示旧版信息，当前下载与功能以本说明为准。
+用户提供的新版功能实机演示：绿色配色、随机砖块宽度，以及 Appearance 中的尺寸、随机范围和色板设置。截图拍摄于本地试用阶段，正式版已去掉“本地试用”字样；当前下载与功能以本说明为准。
 
-A user-provided demonstration of the green palette in use. Version 1.3 preserves these Mac colors and brings them to Windows. The page inside the screenshot shows an earlier version; see below for current downloads and features.
+A user-provided demonstration of the new features: the green palette, random brick widths, and dimensions, random ranges and palette controls in Appearance. Captured during local preview testing; the official release no longer displays the Local Preview label. See below for current downloads and features.
 
 ## 中文说明
 
