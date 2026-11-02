@@ -14,6 +14,14 @@ A translucent colored-brick reading overlay for macOS and Windows.
 
 A user-provided demonstration of the new features: the green palette, random brick widths, and dimensions, random ranges and palette controls in Appearance. Captured during local preview testing; the official release no longer displays the Local Preview label. See below for current downloads and features.
 
+### 外语文献阅读模式 · Document reading mode
+
+![文献阅读模式的整宽色块与 Appearance 分段设置 / Full-width reading bands and section controls in Document mode](docs/images/brick-overlay-document-live.png)
+
+用户提供的文献阅读模式实机演示：将透卡分成 4 个整宽大色块，以区域辅助阅读，适合英文等外语的长段落，避免细小砖块切割单词。分段数可在 Appearance 中调整；按区域划分，不自动识别文章段落。截图拍摄于本地试用阶段。
+
+A user-provided screenshot of Document mode with four full-width colored bands. Broad reading regions suit longer passages in English and other languages without splitting words into small bricks. Adjust the number of sections in Appearance; the bands divide the overlay geometrically rather than detecting paragraphs. Captured during local preview testing.
+
 ## 中文说明
 
 ### 下载
